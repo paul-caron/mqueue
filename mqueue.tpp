@@ -1,3 +1,8 @@
+/*
+Copyright: Paul Caron
+Date: May 22, 2021
+*/
+
 template <class T, int N>
 MQueue<T,N>::MQueue(const char * pathname){
     auto fd = shm_open(pathname, O_CREAT|O_EXCL|O_RDWR, 0644);
