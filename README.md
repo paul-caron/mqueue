@@ -1,5 +1,5 @@
 # MQueue
-Named message queue in C++ for Linux/Unix/Mac
+Named message queue in C++ for Linux/Unix/Mac for inter process communication (IPC).
 
 # How To Include Into A Project
 Simply include these two files into your project folder and in your C++ code you write
