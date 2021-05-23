@@ -7,7 +7,7 @@ Simply include these two files into your project folder and in your C++ code you
 ```
 #include "mqueue.hpp"
 ```
-and then compilation with linkage to pthread
+and then compile with linkage to pthread
 
 ```
 g++ example.cpp -pthread
