@@ -1,4 +1,4 @@
-# mqueue
+# MQueue
 Named message queue in C++ for Linux/Unix/Mac
 
 # How To Use
