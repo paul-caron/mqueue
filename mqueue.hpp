@@ -1,3 +1,7 @@
+/*
+Copyright: Paul Caron
+Date: May 22, 2021
+*/
 #ifndef _MQUEUE_HPP_
 #define _MQUEUE_HPP_
 
