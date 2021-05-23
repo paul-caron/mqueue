@@ -55,7 +55,9 @@ void MQueue<T,N>::push(T element){
 template <class T, int N>
 T MQueue<T,N>::pop(){
     sem_wait(state->mutex);
-    T value = (state->container.at(state->front++));
+    T value{}
+    if(state->size<=0) return value; //simply returns a default value for message type if queue is empty.
+    value = (state->container.at(state->front++));
     state->size--;
     state->front%=N;
     sem_post(state->mutex);
