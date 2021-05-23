@@ -19,7 +19,7 @@ Initialization must also include the type of messages (T) and the maximum number
 
 Besides that, the queue is simple and easy to operate. Push things in, pop things out, check if empty prior poping things out. Pushing and poping will lock and unlock a named semaphore (POSIX, semaphore.h) to enable only one process at a time for modifications on the queue.
 
-The type of messages (T) can be integers, chars, or structs of a fixed size and containing no pointers to process local memory (like dont point something that wont be seen from other processes).
+The type of messages (T) can be integers, chars, or structs of a fixed size and containing no pointers to a process local memory (like dont point something that wont be seen from other processes).
 
 A struct type for messages can be like
 
