@@ -1,2 +1,2 @@
 # mqueue
-named message queue in C/C++ for Linux/Unix/Mac
+named message queue in C++ for Linux/Unix/Mac
