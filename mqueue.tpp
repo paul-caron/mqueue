@@ -46,6 +46,10 @@ MQueue<T,N>::~MQueue(){
 template <class T, int N>
 void MQueue<T,N>::push(T element){
     sem_wait(state->mutex);
+    if(state->size>=N){
+        sem_post(state->mutex);
+        return; //simply returns before queuing if queue is full, ignores the incomming message
+    }    
     (state->container.at(state->back++)) = element;
     state->size++;
     state->back%=N;
@@ -56,7 +60,10 @@ template <class T, int N>
 T MQueue<T,N>::pop(){
     sem_wait(state->mutex);
     T value{}
-    if(state->size<=0) return value; //simply returns a default value for message type if queue is empty.
+    if(state->size<=0){
+        sem_post(state->mutex);
+        return value; //simply returns a default value for message type if queue is empty.
+    }
     value = (state->container.at(state->front++));
     state->size--;
     state->front%=N;
