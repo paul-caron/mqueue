@@ -17,7 +17,7 @@ g++ example.cpp -pthread
 The message queue needs a pathname for initialization, which will become a named shared memory space. This shared memory space will be persistent after a program is finished, but not persistent across reboot. If the shared memory space needs be unlinked, this will need to be done manually on your end.
 Initialization must also include the type of messages (T) and the maximum number of messages that the queue can hold (N).
 
-Besides that, the queue is simple and easy to operate. Push things in, pop things out, check if empty prior poping things out. Pushing and poping will lock and unlock a named semaphore (POSIX, semaphore.h).
+Besides that, the queue is simple and easy to operate. Push things in, pop things out, check if empty prior poping things out. Pushing and poping will lock and unlock a named semaphore (POSIX, semaphore.h) to enable only one process at a time for modifications on the queue.
 
 ## Initialization
 ```
